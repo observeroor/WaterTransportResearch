@@ -1,0 +1,156 @@
+import os
+import matplotlib.pyplot as plt
+
+# 数据定义
+years = ['2020年', '2021年', '2022年', '2023年', '2024年']
+data = {
+'水路货运企业数量(家)':[37, 39, 36, 37, 37],
+'水路运输个体工商户数量(个)':[1, 1, 1, 1, 1],
+'规上水运企业数量(家)':[14, 14, 13, 12, 13],
+'规下水运企业数量(家)':[23, 25, 23, 25, 24],
+'干散货船运力(载重吨)':[1227505, 1538225, 1810658, 2152022, 2226615],
+'集装箱船运力(TEU)':[810, 810, 1026, 1026, 342],
+'注销集装箱船运力(TEU)':[0, 0, 0, 0, 684],
+'注销干散货船运力(载重吨)':[114933, 81796, 130967, 117021, 115222],
+'新增干散货船运力(载重吨)':[173979, 392516, 403837, 458385, 169050],
+'新增集装箱船运力(TEU)':[0, 0, 216, 0, 0],
+'总船舶数量(艘)':[222, 266, 287, 316, 320],
+'注销船舶数量(艘)':[25, 19, 30, 23, 32],
+'新增船舶数量(艘)':[25, 63, 51, 52, 36],
+'船舶净载重(吨)':[1250549, 1561269, 1834139, 2175503, 2229331],
+'按能源类型分类的船舶数量吨位(艘吨)':[0, 0, '6艘新能源,58243吨;281艘传统,1775896吨', '8艘新能源,77146吨;308艘传统,2098357吨', '8艘新能源,77146吨;212艘传统,2152185吨'],
+'按吨位标准分类的船舶数量吨位(艘 吨)':['5000吨以上149艘,1021829吨;5000吨以下73艘,228720吨', '5000吨以上178艘,1275562吨;5000吨以下88艘,285707吨', '5000吨以上207艘,1575907吨;5000吨以下80艘,258232吨', '5000吨以上242艘,1930332吨;5000吨以下74艘,245171吨', '5000吨以上248艘,1978987吨;5000吨以下72艘,250344吨'],
+'老旧船舶数量吨位（18年以上船舶）(艘吨)':['46艘,140035吨', '21艘,65597吨', '17艘,51862吨', '14艘,44564吨', '13艘,47154吨'],
+'特检舶数量吨位(艘吨)':[None, None, None, None, None],
+'企业承担干散货总货运量(万吨)':[3697.6, 4076.5, 4190.7, 4208.5, 4231],
+'企业承担干散货货运量占全市比重(%)':[18.7, 19.1, 19.4, 20, 21.1],
+'水运企业全年总营收(万元)':[86931, 108831, 124385, 134311, 87342],
+'干散货船运力增速(%)':[None, 25.3, 17.7, 18.9, 3.5],
+'集装箱货船运力增速(%)':[None, 0.0, 26.7, 0.0, -66.7]
+
+}
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['Microsoft YaHei']
+plt.rcParams['axes.unicode_minus'] = False
+
+def plot_lines(data_names, title, save_dir, colors=None, annotate=False, markers=None):
+    plt.figure(figsize=(10, 6))
+    for idx, name in enumerate(data_names):
+        values = data.get(name)
+        if values is None:
+            print(f"警告：数据 {name} 不存在")
+            continue
+        y = [v if v is not None and v != '无' else float('nan') for v in values]
+        color = None
+        if colors:
+            if isinstance(colors, dict):
+                color = colors.get(name)
+            elif isinstance(colors, list) and idx < len(colors):
+                color = colors[idx]
+        marker = None
+        if markers:
+            if isinstance(markers, dict):
+                marker = markers.get(name)
+            elif isinstance(markers, list) and idx < len(markers):
+                marker = markers[idx]
+        line, = plt.plot(years, y, marker=marker if marker else 'o', label=name, color=color)
+        if annotate:
+            for x, v in zip(years, y):
+                if v == v:
+                    plt.annotate(f'{int(v) if isinstance(v, (int, float)) and v == int(v) else v}',
+                                 xy=(x, v), xytext=(0, 8), textcoords='offset points',
+                                 ha='center', va='bottom', fontsize=9, color=line.get_color())
+    plt.title(title, fontsize=18)
+    plt.xlabel('年份')
+    plt.ylabel('数值')
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()
+    filename = f"{title}.png"
+    save_path = os.path.join(save_dir, filename)
+    plt.savefig(save_path, dpi=300)
+    plt.close()
+    print(f"已保存：{save_path}")
+
+if __name__ == "__main__":
+    save_dir = r"c:\Git\WaterTransportResearch\3.初稿\生成图片"
+    # 示例1
+    plot_lines(
+        ['水路货运企业数量(家)', '规上水运企业数量(家)', '规下水运企业数量(家)', '水路运输个体工商户数量(个)'],
+        "(1)2020-2024年万州水路运输企业数量变化",
+        save_dir,
+        colors=["#000000", "#14a32c", "#a07b2c",  "#5c2ca0"],
+        annotate=True,
+        markers=['o', 'D', '^', 's']
+    )
+
+    plot_lines(
+        ['水运企业全年总营收(万元)'],
+        "(2)2020-2024年万州水运企业全年总营收(万元)",
+        save_dir,
+        colors=["#000000"],
+        annotate=True,
+        markers=['o']
+    )
+
+    plot_lines(
+        ['企业承担干散货总货运量(万吨)'],
+        "(3)2020-2024年万州企业承担企业承担干散货总货运量(万吨)",
+        save_dir,
+        colors=["#000000"],
+        annotate=True,
+        markers=['o']
+    )    
+
+
+    plot_lines(
+        ['企业承担干散货货运量占全市比重(%)'],
+        "(4)2020-2024年万州企业承担干散货货运量占全市比重(%)",
+        save_dir,
+        colors=["#000000"],
+        annotate=True,
+        markers=['o']
+    )    
+
+
+
+    plot_lines(
+        ['干散货船运力增速(%)', '集装箱货船运力增速(%)'],
+        "(5)2020-2024干散货船、集装箱船运力增速",
+        save_dir,
+        colors=["#000000", "#000000"],
+        annotate=True,
+        markers=['o', 'D']
+    )
+
+    plot_lines(
+        ['总船舶数量(艘)','新增船舶数量(艘)','注销船舶数量(艘)'],
+        "(6)2020-2024年注册地为万州的船舶数量变化",
+        save_dir,
+        colors=["#000000", '#1f77b4',"#b21414"],
+        annotate=True,
+        markers=['o', 'D', '^']
+    )
+
+
+    plot_lines(
+        ['干散货船运力(载重吨)','新增干散货船运力(载重吨)','注销干散货船运力(载重吨)'],
+        "(7)2020-2024年干散货船运力变化",
+        save_dir,
+        colors=["#000000", '#1f77b4',"#b21414"],
+        annotate=True,
+        markers=['o', 'D', '^']
+    )
+
+    plot_lines(
+        ['集装箱船运力(TEU)', '新增集装箱船运力(TEU)','注销集装箱船运力(TEU)' ],
+        "(8)2020-2024年万州集装箱船运力变化",
+        save_dir,
+        colors=["#000000", '#1f77b4',"#b21414"],
+        annotate=True,
+        markers=['o', 'D', '^']
+    )
+
+
+    # 可继续添加更多plot_lines指令
