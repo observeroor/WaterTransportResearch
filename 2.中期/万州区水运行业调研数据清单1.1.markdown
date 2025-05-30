@@ -1,0 +1,161 @@
+# 万州区水运行业调研数据清单
+
+---
+
+## 1. 行业基本概况
+
+- **企业数量**
+  - 注册地为万州、云阳、忠县的企业总数及近五年来的变化
+  - 企业数量详细分类数据：
+<table>
+  <caption>长江中上游区县不同维度分类的企业数量</caption>
+  <thead>
+    <tr>
+      <th colspan="2">地区</th>
+      <th>万州</th>
+      <th>云阳</th>
+      <th>忠县</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="3">长航安全评级</td>
+      <td>A级</td><th></th><th></th><th></th>
+    </tr>
+      <td>B级</td><th></th><th></th><th></th>
+    </tr>
+      <td>C级</td><th></th><th></th><th></th>
+    <tr>
+      <td rowspan="3">船队运力规模</td>
+      <td>万吨以下</td><th></th><th></th><th></th>
+    </tr>
+      <td>1~5万吨</td><th></th><th></th><th></th>
+    </tr>
+      <td>5万吨以上</td><th></th><th></th><th></th>
+    <tr>
+      <td rowspan="3">全年营收</td>
+      <td>亿元以下</td><th></th><th></th><th></th>
+    </tr>
+      <td>1~5亿元</td><th></th><th></th><th></th>
+    </tr>
+      <td>5亿元以上</td><th></th><th></th><th></th>
+    <tr>
+      <td rowspan="3">员工规模</td>
+      <td>50人以下</td><th></th><th></th><th></th>
+    </tr>
+      <td>50-100人</td><th></th><th></th><th></th>
+    </tr>
+      <td>100-500人</td><th></th><th></th><th></th>
+  </tbody>
+</table>
+
+- **行业历史与发展**
+  - 行业内企业的平均运营年限(注册成立的平均年限)
+
+
+---
+
+## 2. 行业经营特征
+- **年度特征**
+    行业总产值（或行业总营收）、行业总税收、总资产（可有可无）
+    <table>
+      <thead>
+    <tr>
+      <th colspan="1">年度</th>
+      <th colspan="1">2020</th>
+      <th colspan="1">2021</th>
+      <th colspan="1">2022</th>
+      <th colspan="1">2023</th>
+      <th colspan="1">2024</th>
+    </tr>
+    <td>万州水运企业总产值</td><td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <td>万州水运企业总税收</td><td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <td>万州水运企业总资产</td><td></td><td></td><td></td><td></td><td></td>
+  </thead>
+    </table>
+
+
+    如无法取得五年数据，或可用五年来增长*%来替代。
+---
+
+## 3. 行业业务特征
+
+- **船只概况**
+  - 按能源类型分类的船只数量
+  - 按吨位分类的船只数量
+
+
+  |吨位|2000吨以下|2000-5000吨|5000吨以上|
+  |---|---|---|---|
+  |船只数量||||
+
+- **货运概况**
+  - 五年货运变化数据：行业总货运量、货运价格、运力
+
+<table>
+  <caption>货运变化</caption>
+  <thead>
+    <tr>
+      <th colspan="2">地区</th>
+      <th >万州</th>
+      <th colspan="1">云阳</th>
+      <th colspan="1">忠县</th>
+    </tr>
+  </thead>
+  <tbody>
+     <tr>
+      <td rowspan="5">区域内货运总量</td>
+      <td>2020</td><th></th><th></th><th></th>
+    </tr>
+      <td>2021</td><th></th><th></th><th></th>
+    </tr>
+      <td>2022</td><th></th><th></th><th></th>
+    </tr>
+      <td>2023</td><th></th><th></th><th></th>
+    </tr>
+      <td>2024</td><th></th><th></th><th></th>
+    </tr>
+        <tr>
+      <td rowspan="5">区域内企业总运力</td>
+      <td>2020</td><th></th><th></th><th></th>
+    </tr>
+      <td>2021</td><th></th><th></th><th></th>
+    </tr>
+      <td>2022</td><th></th><th></th><th></th>
+    </tr>
+      <td>2023</td><th></th><th></th><th></th>
+    </tr>
+      <td>2024</td><th></th><th></th><th></th>
+    </tr>
+    <tr>
+      <td rowspan="5">区域内货运价格</td>
+      <td>2020</td><th></th><th></th><th></th>
+    </tr>
+      <td>2021</td><th></th><th></th><th></th>
+    </tr>
+      <td>2022</td><th></th><th></th><th></th>
+    </tr>
+      <td>2023</td><th></th><th></th><th></th>
+    </tr>
+      <td>2024</td><th></th><th></th><th></th>
+    </tr>
+  </tbody>
+</table>
+  - 万州区按货物类型分类的货运量
+
+---
+## 4. 行业劳动力状况
+- **劳动力结构**
+  - 全行业员工年龄分布（人才不足）
+  - 全行业员工教育水平分布（人才不足，劳动力质量不高）
+  - 全行业劳务、劳动合同类型（待商榷，用工不规范等问题）
+- **就业条件**
+  - 全行业行业平均工资水平五年的变化
+---
+## 5. 市场与竞争状况
+- **市场结构**
+  - 市场集中度的五年变化（如前五大企业的市场份额）
+
+---
